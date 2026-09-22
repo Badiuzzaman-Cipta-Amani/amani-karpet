@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme static {
+  --color-amani-blue: #1e3a8a; /* Brand color */
+  --color-amani-blue-50: #eef4ff;
+  --color-amani-blue-100: #dbe8ff;
+  --color-amani-blue-200: #bdd2ff;
+  --color-amani-blue-300: #92b3ff;
+  --color-amani-blue-400: #5f89f5;
+  --color-amani-blue-500: #1e3a8a; /* Brand color */
+  --color-amani-blue-600: #183173;
+  --color-amani-blue-700: #14295f;
+  --color-amani-blue-800: #10214b;
+  --color-amani-blue-900: #0b1737;
+  --color-amani-blue-950: #060c1f;
+
+  /* ==========================================
+   * Amani Blue Light
+   * Base (500): #3b82f6
+   * ========================================== */
+  --color-amani-blue-light: #3b82f6;
+  --color-amani-blue-light-50: #eff6ff;
+  --color-amani-blue-light-100: #dbeafe;
+  --color-amani-blue-light-200: #bfdbfe;
+  --color-amani-blue-light-300: #93c5fd;
+  --color-amani-blue-light-400: #60a5fa;
+  --color-amani-blue-light-500: #3b82f6;
+  --color-amani-blue-light-600: #2563eb;
+  --color-amani-blue-light-700: #1d4ed8;
+  --color-amani-blue-light-800: #1e40af;
+  --color-amani-blue-light-900: #1e3a8a;
+  --color-amani-blue-light-950: #172554;
+
+  /* ==========================================
+   * Amani Blue Dark
+   * Base (500): #0f1f4a
+   * ========================================== */
+  --color-amani-blue-dark: #0f1f4a;
+  --color-amani-blue-dark-50: #eef2fb;
+  --color-amani-blue-dark-100: #d9e3f7;
+  --color-amani-blue-dark-200: #b7c8ef;
+  --color-amani-blue-dark-300: #89a3e2;
+  --color-amani-blue-dark-400: #4d6fc5;
+  --color-amani-blue-dark-500: #0f1f4a;
+  --color-amani-blue-dark-600: #0c1a3f;
+  --color-amani-blue-dark-700: #091533;
+  --color-amani-blue-dark-800: #061027;
+  --color-amani-blue-dark-900: #040b1b;
+  --color-amani-blue-dark-950: #01040d;
+
+  /* ==========================================
+   * Amani Yellow
+   * Base (500): #facc15
+   * ========================================== */
+  --color-amani-yellow: #facc15;
+  --color-amani-yellow-50: #fefce8;
+  --color-amani-yellow-100: #fef9c3;
+  --color-amani-yellow-200: #fef08a;
+  --color-amani-yellow-300: #fde047;
+  --color-amani-yellow-400: #facc15;
+  --color-amani-yellow-500: #facc15;
+  --color-amani-yellow-600: #eab308;
+  --color-amani-yellow-700: #ca8a04;
+  --color-amani-yellow-800: #a16207;
+  --color-amani-yellow-900: #854d0e;
+  --color-amani-yellow-950: #713f12;
+
+  /* ==========================================
+   * Amani Yellow Light
+   * Base (500): #fef08a
+   * ========================================== */
+  --color-amani-yellow-light: #fef08a;
+  --color-amani-yellow-light-50: #fffef2;
+  --color-amani-yellow-light-100: #fffce3;
+  --color-amani-yellow-light-200: #fff9c4;
+  --color-amani-yellow-light-300: #fff59d;
+  --color-amani-yellow-light-400: #fef38f;
+  --color-amani-yellow-light-500: #fef08a;
+  --color-amani-yellow-light-600: #fde047;
+  --color-amani-yellow-light-700: #facc15;
+  --color-amani-yellow-light-800: #eab308;
+  --color-amani-yellow-light-900: #ca8a04;
+  --color-amani-yellow-light-950: #854d0e;
+
+  /* ==========================================
+   * Amani Yellow Dark
+   * Base (500): #ca8a04
+   * ========================================== */
+  --color-amani-yellow-dark: #ca8a04;
+  --color-amani-yellow-dark-50: #fffbeb;
+  --color-amani-yellow-dark-100: #fef3c7;
+  --color-amani-yellow-dark-200: #fde68a;
+  --color-amani-yellow-dark-300: #fcd34d;
+  --color-amani-yellow-dark-400: #eab308;
+  --color-amani-yellow-dark-500: #ca8a04;
+  --color-amani-yellow-dark-600: #a16207;
+  --color-amani-yellow-dark-700: #854d0e;
+  --color-amani-yellow-dark-800: #713f12;
+  --color-amani-yellow-dark-900: #5b3206;
+  --color-amani-yellow-dark-950: #422006;
+}

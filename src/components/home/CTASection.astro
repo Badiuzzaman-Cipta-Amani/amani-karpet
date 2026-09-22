@@ -1,0 +1,68 @@
+---
+import { whatsappUrl } from "@/utils/whatsapp";
+import { Whatsapp } from "simple-icons-astro";
+---
+
+<section
+  class="cta relative overflow-hidden text-white pt-24 pb-24 lg:py-32 px-6"
+>
+
+  <!-- The van is cut off on its right side, so it sits flush against the edge.
+       On phones it leads the section; on desktop it anchors bottom-right. -->
+  <div
+    class="relative -mt-14 mb-6 -mr-6 ml-auto w-full max-w-md lg:absolute lg:right-0 lg:bottom-0 lg:m-0 lg:w-[44%] lg:max-w-[52rem] lg:translate-y-[8%]"
+  >
+    <img
+      src="/images/car-cta.webp"
+      alt="Mobil antar jemput Amani Laundry Karpet"
+      width="1536"
+      height="1024"
+      loading="lazy"
+      decoding="async"
+      class="cta-van block w-full h-auto"
+    />
+  </div>
+
+  <div class="relative max-w-7xl mx-auto">
+    <div class="max-w-2xl lg:max-w-lg xl:max-w-2xl">
+      <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-5">
+        Karpet kotor? Biar kami yang urus.
+      </h2>
+      <p class="text-white/75 text-lg leading-relaxed mb-9">
+        Chat kami di WhatsApp, sebutkan jenis dan ukuran karpet Anda, dan kurir
+        kami akan menjemputnya ke rumah. Gratis antar jemput untuk area Sukabumi.
+      </p>
+      <div class="flex flex-col sm:flex-row sm:flex-wrap gap-4">
+        <a
+          href={whatsappUrl()}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2.5 bg-amani-yellow text-amani-blue-dark px-8 py-4 rounded-full font-bold hover:bg-amani-yellow-300 transition-colors"
+        >
+          <Whatsapp class="size-5" /> Pesan via WhatsApp
+        </a>
+        <a
+          href="#layanan"
+          class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold border border-white/25 text-white hover:bg-white/10 transition-colors"
+        >
+          Lihat layanan
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Darker toward the van so its lighter blue stands off the backdrop. */
+  .cta {
+    background: linear-gradient(
+      135deg,
+      var(--color-amani-blue-light-700),
+      var(--color-amani-blue-light-800)
+    );
+  }
+  /* The van is nearly the same blue as the backdrop; a shadow lifts it off. */
+  .cta-van {
+    filter: drop-shadow(0 20px 28px rgba(6, 12, 31, 0.4));
+  }
+</style>

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Ibu Rina",
+    "role": "Pelanggan, Cisaat",
+    "rating": 5,
+    "text": "Karpet ruang tamu yang sudah lama bau apek jadi wangi lagi. Dijemput pagi, besok sorenya sudah diantar, kering sempurna."
+  },
+  {
+    "id": 2,
+    "name": "Pak Dedi",
+    "role": "DKM Masjid, Cibadak",
+    "rating": 5,
+    "text": "Karpet masjid kami 40 meter dicuci semua tanpa mengganggu jadwal salat. Timnya rapi dan tepat waktu. Terima kasih Amani."
+  },
+  {
+    "id": 3,
+    "name": "Mbak Sari",
+    "role": "Pelanggan, Sukabumi Kota",
+    "rating": 5,
+    "text": "Karpet shaggy tebal yang saya kira sudah tidak bisa diselamatkan ternyata bersih total. Bulunya kembali lembut."
+  },
+  {
+    "id": 4,
+    "name": "Bu Ani",
+    "role": "Pemilik Kos, Gunungpuyuh",
+    "rating": 5,
+    "text": "Sudah langganan untuk semua karpet kamar kos. Harganya masuk akal dan pelayanannya konsisten dari awal."
+  },
+  {
+    "id": 5,
+    "name": "Pak Hendra",
+    "role": "Pengelola Kantor, Cisaat",
+    "rating": 5,
+    "text": "Karpet kantor dua lantai selesai dalam sehari. Noda kopi yang sudah bertahun-tahun ikut hilang."
+  },
+  {
+    "id": 6,
+    "name": "Ibu Lestari",
+    "role": "Pelanggan, Cikiray",
+    "rating": 5,
+    "text": "Adminnya responsif di WhatsApp, kurirnya sopan. Karpet bayi dicuci dengan deterjen yang aman, saya jadi tenang."
+  },
+  {
+    "id": 7,
+    "name": "Kang Asep",
+    "role": "Pelanggan, Cibolang",
+    "rating": 5,
+    "text": "Gratis antar jemput itu yang bikin saya pilih Amani. Tinggal chat, karpet dijemput, beres."
+  },
+  {
+    "id": 8,
+    "name": "Ustadz Fauzi",
+    "role": "DKM Musala, Karamat",
+    "rating": 5,
+    "text": "Karpet musala jadi seperti baru. Jemaah sampai bertanya apakah kami ganti karpet."
+  }
+]

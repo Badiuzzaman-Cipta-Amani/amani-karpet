@@ -1,0 +1,88 @@
+---
+import { links, company, whatsapp } from "@/data/common.json";
+import { whatsappUrl } from "@/utils/whatsapp";
+import { formatPhoneNumber } from "@/utils/number";
+import { Whatsapp } from "simple-icons-astro";
+import { MapPin, Clock } from "@lucide/astro";
+---
+
+<footer class="bg-amani-blue-dark text-white pt-16 pb-8 px-6">
+  <div class="max-w-7xl mx-auto grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1.2fr]">
+    <div>
+      <div class="inline-block bg-white rounded-2xl p-3 mb-5">
+        <img
+          src="/logo.png"
+          alt={`Logo ${company.name}`}
+          width="1200"
+          height="823"
+          class="h-20 w-auto"
+        />
+      </div>
+      <p class="text-white/70 text-sm leading-relaxed max-w-md">
+        {company.description}
+      </p>
+    </div>
+
+    <nav aria-label="Menu footer">
+      <h4 class="text-base font-bold mb-5 text-amani-yellow">Menu</h4>
+      {
+        links.map((v) => (
+          <a
+            href={v.url}
+            class="block text-white/70 text-sm mb-3 hover:text-white transition-colors"
+          >
+            {v.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div>
+      <h4 class="text-base font-bold mb-5 text-amani-yellow">Hubungi Kami</h4>
+      <div class="space-y-4 text-sm">
+        <a
+          href={whatsappUrl()}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-3 text-white/70 hover:text-white transition-colors"
+        >
+          <span
+            class="size-9 rounded-lg bg-white/10 flex items-center justify-center shrink-0"
+          >
+            <Whatsapp class="size-4" />
+          </span>
+          <span class="font-medium text-white">
+            {formatPhoneNumber(whatsapp.phone)}
+          </span>
+        </a>
+        <a
+          href={company.mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-start gap-3 text-white/70 hover:text-white transition-colors"
+        >
+          <span
+            class="size-9 rounded-lg bg-white/10 flex items-center justify-center shrink-0"
+          >
+            <MapPin class="size-4" />
+          </span>
+          <span class="leading-relaxed">{company.address}</span>
+        </a>
+        <p class="flex items-center gap-3 text-white/70">
+          <span
+            class="size-9 rounded-lg bg-white/10 flex items-center justify-center shrink-0"
+          >
+            <Clock class="size-4" />
+          </span>
+          <span>{company.hours}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="max-w-7xl mx-auto mt-12 pt-6 border-t border-white/10 text-center text-white/50 text-sm"
+  >
+    © {new Date().getFullYear()} {company.name}. {company.tagline}.
+  </div>
+</footer>

@@ -1,0 +1,121 @@
+---
+import { links, company } from "@/data/common.json";
+import { whatsappUrl } from "@/utils/whatsapp";
+import { Menu, X } from "@lucide/astro";
+
+interface Props {
+  currentPage?: string;
+}
+
+const { currentPage } = Astro.props;
+const waUrl = whatsappUrl();
+---
+
+<header class="fixed top-0 left-0 right-0 z-60">
+  <nav
+    class="bg-white/95 backdrop-blur-md border-b border-amani-blue/10"
+    aria-label="Navigasi utama"
+  >
+    <div
+      class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6"
+    >
+      <a href="/" class="shrink-0" aria-label={`${company.name} - Beranda`}>
+        <img
+          src="/logo.png"
+          alt={`Logo ${company.name}`}
+          width="1200"
+          height="823"
+          class="h-16 w-auto"
+        />
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        {
+          links.map((v) => (
+            <a
+              href={v.url}
+              class={`text-sm font-semibold transition-colors ${
+                currentPage === v.key
+                  ? "text-amani-blue"
+                  : "text-slate-700 hover:text-amani-blue"
+              }`}
+            >
+              {v.label}
+            </a>
+          ))
+        }
+        <a
+          href={waUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-amani-blue text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-amani-blue-dark transition-colors"
+        >
+          Pesan Sekarang
+        </a>
+      </div>
+
+      <button
+        id="mobileMenuBtn"
+        type="button"
+        class="md:hidden text-amani-blue cursor-pointer p-1"
+        aria-label="Buka menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <Menu class="size-7 menu-open" />
+        <X class="size-7 menu-close hidden" />
+      </button>
+    </div>
+  </nav>
+
+  <div
+    id="mobileMenu"
+    class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 shadow-lg"
+  >
+    {
+      links.map((v) => (
+        <a
+          href={v.url}
+          class={`block py-3 px-3 rounded-lg font-semibold transition-colors ${
+            currentPage === v.key
+              ? "text-amani-blue bg-amani-blue/5"
+              : "text-slate-800 hover:text-amani-blue hover:bg-slate-50"
+          }`}
+        >
+          {v.label}
+        </a>
+      ))
+    }
+    <a
+      href={waUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-3 block text-center bg-amani-blue text-white px-6 py-3 rounded-full font-bold"
+    >
+      Pesan Sekarang
+    </a>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById("mobileMenuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const openIcon = menuBtn?.querySelector(".menu-open");
+  const closeIcon = menuBtn?.querySelector(".menu-close");
+
+  const setOpen = (open: boolean) => {
+    mobileMenu?.classList.toggle("hidden", !open);
+    openIcon?.classList.toggle("hidden", open);
+    closeIcon?.classList.toggle("hidden", !open);
+    menuBtn?.setAttribute("aria-expanded", String(open));
+    menuBtn?.setAttribute("aria-label", open ? "Tutup menu" : "Buka menu");
+  };
+
+  menuBtn?.addEventListener("click", () => {
+    setOpen(mobileMenu?.classList.contains("hidden") ?? false);
+  });
+
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+</script>

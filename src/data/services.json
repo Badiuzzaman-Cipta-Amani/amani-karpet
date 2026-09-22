@@ -1,0 +1,26 @@
+[
+  {
+    "id": "karpet-tipis",
+    "type": "Rumah & Kantor",
+    "name": "Karpet Tipis",
+    "desc": "Karpet permadani, karpet bulu pendek, dan karpet ruang tamu. Dicuci lembut agar warna dan motif tetap terjaga.",
+    "image": "https://images.unsplash.com/photo-1693147119746-381a5c1917fe",
+    "alt": "Karpet tipis bermotif merah yang terhampar di lantai"
+  },
+  {
+    "id": "karpet-tebal",
+    "type": "Bulu Tebal & Shaggy",
+    "name": "Karpet Tebal",
+    "desc": "Karpet shaggy, karpet bulu panjang, dan karpet bayi. Dibersihkan sampai ke serat terdalam, dikeringkan sampai benar-benar kering.",
+    "image": "https://images.unsplash.com/photo-1647553403035-abd0637ef238",
+    "alt": "Serat karpet bulu tebal berwarna biru dilihat dari dekat"
+  },
+  {
+    "id": "karpet-masjid",
+    "type": "Masjid & Musala",
+    "name": "Karpet Masjid",
+    "desc": "Karpet sajadah roll dan karpet masjid ukuran besar. Kami jemput, cuci, dan pasang kembali tanpa mengganggu jadwal salat.",
+    "image": "https://images.unsplash.com/photo-1582574736964-02de9666c77f",
+    "alt": "Karpet merah memanjang di dalam ruang salat masjid"
+  }
+]

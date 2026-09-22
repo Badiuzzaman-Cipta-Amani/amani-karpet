@@ -1,0 +1,94 @@
+---
+import "@/styles/main.css";
+import WhatsAppFloat from "@/components/base/WhatsAppFloat.vue";
+import { AstroSeo } from "@astrolib/seo";
+import Analytics from "@vercel/analytics/astro";
+import { company } from "@/data/common.json";
+
+type Props = {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+};
+
+const {
+  title,
+  description,
+  canonicalUrl = Astro.site?.href,
+  ogImage = "/logo.png",
+} = Astro.props;
+
+const fullTitle = `${title} | ${company.name}`;
+const ogImageUrl = new URL(ogImage, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="theme-color" content="#1e3a8a" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <AstroSeo
+      title={fullTitle}
+      description={description}
+      canonical={canonicalUrl}
+      openGraph={{
+        type: "website",
+        title: fullTitle,
+        description,
+        url: canonicalUrl,
+        images: [
+          {
+            url: ogImageUrl,
+            width: 1200,
+            height: 823,
+            alt: company.name,
+            type: "image/png",
+          },
+        ],
+      }}
+      twitter={{
+        cardType: "summary_large_image",
+      }}
+    />
+
+    <slot name="header" />
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <Analytics />
+    <style is:global>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+        color: #0f172a;
+        background: #ffffff;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <slot />
+    <WhatsAppFloat client:load />
+  </body>
+</html>

@@ -1,0 +1,42 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import Navbar from "@/components/base/Navbar.astro";
+import HeroSection from "@/components/home/HeroSection.astro";
+import ServicesSection from "@/components/home/ServicesSection.astro";
+import AboutSection from "@/components/home/AboutSection.astro";
+import StatsSection from "@/components/home/StatsSection.astro";
+import TestimonialsSection from "@/components/home/TestimonialsSection.astro";
+import CTASection from "@/components/home/CTASection.astro";
+import Footer from "@/components/base/Footer.astro";
+import { Schema } from "astro-seo-schema";
+import {
+  organizationSchema,
+  businessSchema,
+  websiteSchema,
+} from "@/constants/jsonld";
+import { company } from "@/data/common.json";
+
+const title = "Cuci karpet antar jemput Sukabumi";
+---
+
+<MainLayout title={title} description={company.description}>
+  <Fragment slot="header">
+    <Schema
+      item={{
+        "@context": "https://schema.org",
+        "@graph": [organizationSchema, businessSchema, websiteSchema],
+      }}
+    />
+  </Fragment>
+
+  <Navbar currentPage="beranda" />
+  <main>
+    <HeroSection />
+    <ServicesSection />
+    <AboutSection />
+    <StatsSection />
+    <TestimonialsSection />
+    <CTASection />
+  </main>
+  <Footer />
+</MainLayout>

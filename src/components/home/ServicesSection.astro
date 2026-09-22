@@ -1,0 +1,51 @@
+---
+import services from "@/data/services.json";
+---
+
+<section id="layanan" class="bg-white py-20 lg:py-28 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-2xl mx-auto text-center mb-14">
+      <p
+        class="inline-flex items-center gap-2 text-sm font-semibold text-amani-blue mb-4"
+      >
+        <span class="size-2 rounded-full bg-amani-yellow"></span> Layanan Kami
+      </p>
+      <h2
+        class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-amani-blue-dark tracking-tight mb-5"
+      >
+        Semua jenis karpet, satu tempat cuci
+      </h2>
+      <p class="text-slate-600 text-lg leading-relaxed">
+        Setiap jenis karpet punya cara cuci yang berbeda. Kami menyesuaikan
+        mesin, deterjen, dan lama pengeringan agar hasilnya bersih tanpa merusak
+        serat.
+      </p>
+    </div>
+
+    <div class="grid gap-10 md:grid-cols-3">
+      {
+        services.map((s) => (
+          <article class="text-center">
+            <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-slate-100 mb-6">
+              <img
+                src={`${s.image}?w=800&q=80&auto=format&fit=crop`}
+                alt={s.alt}
+                width="800"
+                height="1000"
+                loading="lazy"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <p class="text-sm font-semibold text-amani-blue-light mb-2">
+              {s.type}
+            </p>
+            <h3 class="text-2xl font-bold text-amani-blue-dark mb-3">{s.name}</h3>
+            <p class="text-slate-600 leading-relaxed max-w-sm mx-auto">
+              {s.desc}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

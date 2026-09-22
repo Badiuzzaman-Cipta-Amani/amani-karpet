@@ -1,0 +1,20 @@
+{
+  "company": {
+    "name": "Amani Laundry Karpet",
+    "tagline": "Laundry Karpet Antar Jemput Sukabumi",
+    "description": "Amani Laundry Karpet adalah jasa cuci karpet profesional di Sukabumi. Karpet tipis, karpet tebal, hingga karpet masjid kami bersihkan dengan mesin dan deterjen khusus, lalu diantar kembali ke rumah Anda dalam kondisi bersih, wangi, dan kering sempurna.",
+    "address": "Ruko Bumi Asri, Jl. Cikiray-Cijambu No. A6, Sukamanah, Kec. Cisaat, Kabupaten Sukabumi, Jawa Barat 43152",
+    "hours": "Setiap hari, 08.00 - 20.00 WIB",
+    "mapsUrl": "https://maps.google.com/?q=Amani+Laundry+Karpet+Cisaat+Cikiray"
+  },
+  "whatsapp": {
+    "phone": "+6285353896139",
+    "message": "Halo Amani Laundry Karpet, saya mau pesan layanan cuci karpet."
+  },
+  "links": [
+    { "key": "beranda", "label": "Beranda", "url": "/" },
+    { "key": "layanan", "label": "Layanan", "url": "/#layanan" },
+    { "key": "tentang", "label": "Tentang Kami", "url": "/#tentang" },
+    { "key": "testimoni", "label": "Testimoni", "url": "/#testimoni" }
+  ]
+}

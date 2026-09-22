@@ -1,0 +1,106 @@
+---
+import testimonials from "@/data/testimonials.json";
+import { Star } from "@lucide/astro";
+
+const half = Math.ceil(testimonials.length / 2);
+const rows = [testimonials.slice(0, half), testimonials.slice(half)];
+
+/** First letter of the given name, skipping Indonesian honorifics. */
+const initial = (name: string) =>
+  name.replace(/^(Ibu|Pak|Bu|Mbak|Kang|Ustadz)\s+/, "").charAt(0);
+---
+
+<section id="testimoni" class="bg-white py-20 lg:py-28 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 mb-12">
+    <p
+      class="inline-flex items-center gap-2 text-sm font-semibold text-amani-blue mb-4"
+    >
+      <span class="size-2 rounded-full bg-amani-yellow"></span> Testimoni
+      Pelanggan
+    </p>
+    <h2
+      class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-amani-blue-dark tracking-tight"
+    >
+      Kata mereka tentang Amani
+    </h2>
+  </div>
+
+  <div class="space-y-6">
+    {
+      rows.map((row, i) => (
+        <div class="marquee" data-direction={i === 0 ? "right" : "left"}>
+          {/* Three identical groups so the track stays covered on wide screens;
+              each group slides by exactly its own width, so the loop is seamless. */}
+          {[0, 1, 2].map((copy) => (
+            <div class="marquee-group" aria-hidden={copy > 0 ? "true" : undefined}>
+              {row.map((t) => (
+                <article class="w-80 sm:w-96 shrink-0 bg-white border border-slate-200 rounded-3xl p-6 shadow-[0_2px_12px_rgba(15,31,74,0.06)]">
+                  <div class="flex items-center gap-3 mb-5">
+                    <span class="size-11 rounded-full bg-amani-blue-100 text-amani-blue font-bold flex items-center justify-center">
+                      {initial(t.name)}
+                    </span>
+                    <div>
+                      <p class="font-bold text-amani-blue-dark leading-tight">
+                        {t.name}
+                      </p>
+                      <p class="text-sm text-slate-500">{t.role}</p>
+                    </div>
+                  </div>
+                  <p class="text-slate-700 leading-relaxed mb-5">“{t.text}”</p>
+                  <div class="flex gap-1" aria-label={`Rating ${t.rating} dari 5`}>
+                    {Array.from({ length: t.rating }).map(() => (
+                      <Star class="size-4 fill-amani-yellow text-amani-yellow" />
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .marquee {
+    display: flex;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+  }
+  .marquee-group {
+    display: flex;
+    gap: 1.5rem;
+    padding-right: 1.5rem;
+    flex-shrink: 0;
+    will-change: transform;
+    animation: marquee-left 60s linear infinite;
+  }
+  .marquee[data-direction="right"] .marquee-group {
+    animation-name: marquee-right;
+  }
+  .marquee:hover .marquee-group {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-group {
+      animation: none;
+    }
+  }
+  @keyframes marquee-left {
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes marquee-right {
+    from {
+      transform: translateX(-100%);
+    }
+  }
+</style>
